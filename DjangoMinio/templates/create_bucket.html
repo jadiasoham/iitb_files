@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Bucket</title>
+</head>
+<body>
+    <h1>Create a New Bucket</h1>
+    <form method="POST" action="{% url 'create_bucket' %}">
+        {% csrf_token %}
+        <label for="bucket_name">Bucket Name:</label>
+        <input type="text" id="bucket_name" name="bucket_name" required>
+        <a href= "/list_buckets/" target= "_blank">Click here to view a list of existing buckets</a>
+        <button type="submit">Create Bucket</button>
+    </form>
+</body>
+</html>

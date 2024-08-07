@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload File</title>
+</head>
+<body>
+    <h1>Upload File</h1>
+    <form method="POST" enctype="multipart/form-data" action="{% url 'upload_file' %}">
+        {% csrf_token %}
+        <label for="file">File:</label>
+        <input type="file" id="file" name="file" required>
+        <br>
+        <lable for= "bucket_name">Bucket name:</label>
+        <input type= "text" hint= "leave blank for default bucket" id= "bucket_name" name= "bucket_name">
+        <a href= "/list_buckets/" target= "_blank">Click here to view a list of existing buckets</a>
+        <br>
+        <label for="prefix">Prefix (folder path):</label>
+        <input type="text" id="prefix" name="prefix">
+        <br>
+        <button type="submit">Upload</button>
+    </form>
+</body>
+</html>
